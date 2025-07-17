@@ -9,8 +9,10 @@ app.use(cors())
 app.use(express.json())
 
 // Replace with your actual credentials
-const BEE_CLIENT_ID = 'YOUR-CLIENT-ID'
-const BEE_CLIENT_SECRET = 'YOUR-CLIENT-SECRET'
+import dotenv from 'dotenv'
+dotenv.config()
+const BEE_CLIENT_ID = process.env.BEE_CLIENT_ID
+const BEE_CLIENT_SECRET = process.env.BEE_CLIENT_SECRET
 
 app.post('/proxy/bee-auth', async (req, res) => {
   try {

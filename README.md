@@ -227,8 +227,10 @@ app.use(cors())
 app.use(express.json())
 
 // Replace with your actual credentials
-const BEE_CLIENT_ID = 'YOUR-CLIENT-ID'
-const BEE_CLIENT_SECRET = 'YOUR-CLIENT-SECRET'
+import dotenv from 'dotenv'
+dotenv.config()
+const BEE_CLIENT_ID = process.env.BEE_CLIENT_ID
+const BEE_CLIENT_SECRET = process.env.BEE_CLIENT_SECRET
 
 app.post('/proxy/bee-auth', async (req, res) => {
   try {
@@ -261,6 +263,13 @@ This server exposes a POST route (`/proxy/bee-auth`) that:
 * Returns a token to the frontend
 
 You’ll also install `axios`, `express`, and `cors` as dependencies.
+
+The `.env.example` file in the root of the GitHub repository includes an example of a `.env` file. To create a .env file, rename this file to `.env`. Copy and paste your credentials from the Beefree SDK Developer Console securely into the file's placeholders. The following code shows an example of what these placeholders look like inside the file.
+
+```javascript
+BEE_CLIENT_ID='YOUR-CLIENT-ID'
+BEE_CLIENT_SECRET='YOUR-CLIENT-SECRET'
+```
 
 ### **6. Run the Application**
 

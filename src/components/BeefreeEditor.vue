@@ -25,11 +25,13 @@ onMounted(async () => {
       }
     }
 
-    const token = await fetch('http://localhost:3001/proxy/bee-auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ uid: 'demo-user' })
-    }).then(res => res.json())
+    const response = await fetch('http://localhost:3001/proxy/bee-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uid: 'demo-user' })
+      })
+    
+    const token = await response.json();
 
     const bee = new BeefreeSDK(token)
     bee.start(beeConfig, {})
