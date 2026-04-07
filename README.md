@@ -1,8 +1,12 @@
----
-description: >-
-  Welcome to the Vue.js Quickstart Guide for embedding Beefree SDK's no-code
-  email builder in your Vue.js application.
----
+> [!WARNING]
+> **⛔ This repository has been deprecated**
+>
+> Beefree SDK now has a new Vue Wrapper, and this project is no longer updated/maintained. The sample project has moved to the new repository:
+>
+> **👉 [BeefreeSDK/vue-email-builder](https://github.com/BeefreeSDK/vue-email-builder/tree/main/example)**
+>
+> Please use the new repository for all future issues, pull requests, and contributions.
+> This repo is archived and will not receive any further updates.
 
 # Vue.js No-code Email Builder
 
